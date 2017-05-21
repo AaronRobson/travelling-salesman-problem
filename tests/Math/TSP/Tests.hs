@@ -8,11 +8,11 @@ import Math.TSP
 
 tspSuite :: Test
 tspSuite = testGroup "TSP calls"
-    [ testCase "null case" (testTSP (Graph {locations = [], salesmen = []}) (Just []))
+    [ testCase "null case" (testTSP [] [] [])
     ]
 
-testTSP :: Graph -> Maybe Paths -> Assertion
-testTSP argument expected = expected @=? findPaths argument
+testTSP :: Nodes -> WeightedEdges -> Route -> Assertion
+testTSP nodes weightedEdges expected = expected @=? findRoute nodes weightedEdges
 
 main :: IO ()
 main = defaultMain

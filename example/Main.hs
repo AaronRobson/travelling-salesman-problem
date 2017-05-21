@@ -1,6 +1,6 @@
 module Main where
 
-import qualified Math.TSP
+import qualified Math.TSP()
 
 main :: IO ()
 main = do
