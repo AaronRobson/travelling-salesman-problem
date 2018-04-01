@@ -80,7 +80,7 @@ test-suite tests
       -Wall -threaded
   hs-source-dirs:
       tests
-  exposed-modules:
+  other-modules:
       Math.TSP.Tests
   build-depends:
       base >=4.9
