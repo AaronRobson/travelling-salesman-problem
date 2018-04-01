@@ -86,5 +86,6 @@ test-suite tests
     , test-framework
     , test-framework-hunit
     , travelling-salesman-problem
+    , containers
   default-language:
       Haskell2010
