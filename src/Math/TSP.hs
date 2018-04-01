@@ -1,7 +1,6 @@
 module Math.TSP where
 
-import Data.Map (Map, (!))
-import qualified Data.Map as Map
+import qualified Data.Map
 
 data Node = Node { city :: String
                  } deriving (Show, Eq, Ord)
@@ -13,7 +12,7 @@ type Edges = [Edge]
 
 type Weight = Integer
 
-type WeightedEdges = Map Edge Weight
+type WeightedEdges = Data.Map.Map Edge Weight
 
 type Route = Nodes
 type Routes = [Route]
@@ -35,7 +34,7 @@ findEdges [_] = []
 findEdges (x1:x2:xs) = (Edge x1 x2):(findEdges (x2:xs))
 
 weightOfEdge :: WeightedEdges -> Edge -> Weight
-weightOfEdge weightedEdges edge = weightedEdges ! edge
+weightOfEdge weightedEdges edge = weightedEdges Data.Map.! edge
 
 weightOfEdges :: WeightedEdges -> Edges -> Weight
 weightOfEdges weightedEdges edges = sum $ map (weightOfEdge weightedEdges) edges
